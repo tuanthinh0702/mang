@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>English-Vietnamese Dictionary</b><br/>
+<input type="text" id="hienthi">
+<button type="button" onclick="change()">Search</button>
+<br/>
+Ý nghĩa: <p id="ketqua"></p>
+<script>
+    function change() {
+        let text = document.getElementById("hienthi").value;
+        let english = ['eat', 'and', 'learn', 'codegym'];
+        let vietnam = ['ăn', 'và', 'học', 'Javascript'];
+        let index = 0;
+        let check = true;
+        for (let i = 0; i < english.length; i++) {
+            if (english[i] === text) {
+                check = true;
+                index = i;
+                break;
+            } else {
+                check = false;
+            }
+        }
+        if (check) {
+            document.getElementById("ketqua").innerHTML = vietnam[index];
+        } else {
+            alert("not found.");
+        }
+    }
+</script>
+</body>
+</html>
