@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[Bài tập] Tic tac toe</title>
+  <style>
+    #main{width: 400px; height:393px; border: 2px solid black; border: none; margin-left: 450px}
+    input {width: 133px; height: 130px;float: left; font-family: arial; font-size: 50px ; outline: none; border: 4px solid blue; background: transparent}
+    #Btnreset{width: 400px; height: 100px;margin-left: 450px; margin-top: 20px; border-radius: 300px }
+  </style>
+</head>
+<body>
+<div id="main">
+  <input type="button" id="btn1" onclick="clickBtn('btn1')">
+  <input type="button" id="btn2" onclick="clickBtn('btn2')">
+  <input type="button" id="btn3" onclick="clickBtn('btn3')">
+  <input type="button" id="btn4" onclick="clickBtn('btn4')">
+  <input type="button" id="btn5" onclick="clickBtn('btn5')">
+  <input type="button" id="btn6" onclick="clickBtn('btn6')">
+  <input type="button" id="btn7" onclick="clickBtn('btn7')">
+  <input type="button" id="btn8" onclick="clickBtn('btn8')">
+  <input type="button" id="btn9" onclick="clickBtn('btn9')">
+</div>
+<input type="button" id="Btnreset" onclick="reset()" value="Reset" >
+<script>
+  let game=1;
+  function clickBtn(btn) {
+    if (game==1){
+      document.getElementById(btn).value="X";
+      game -=1;
+      document.getElementById(btn).disabled="disabled";
+      winner();
+    }
+    else {
+      document.getElementById(btn).value="O";
+      game += 1;
+      document.getElementById(btn).disabled="disabled";
+      winner();
+    }
+  }
+  function winner() {
+    if (
+      // all possible way for X to win.
+      document.getElementById("btn1").value=="X"&&
+      document.getElementById("btn2").value=="X"&&
+      document.getElementById("btn3").value=="X"||
+      document.getElementById("btn4").value=="X"&&
+      document.getElementById("btn5").value=="X"&&
+      document.getElementById("btn6").value=="X"||
+      document.getElementById("btn7").value=="X"&&
+      document.getElementById("btn8").value=="X"&&
+      document.getElementById("btn9").value=="X"||
+      document.getElementById("btn1").value=="X"&&
+      document.getElementById("btn5").value=="X"&&
+      document.getElementById("btn9").value=="X"||
+      document.getElementById("btn3").value=="X"&&
+      document.getElementById("btn5").value=="X"&&
+      document.getElementById("btn7").value=="X"||
+      document.getElementById("btn1").value=="X"&&
+      document.getElementById("btn4").value=="X"&&
+      document.getElementById("btn7").value=="X"||
+      document.getElementById("btn2").value=="X"&&
+      document.getElementById("btn5").value=="X"&&
+      document.getElementById("btn8").value=="X"||
+      document.getElementById("btn3").value=="X"&&
+      document.getElementById("btn6").value=="X"&&
+      document.getElementById("btn9").value=="X"
+    ){
+      document.write(" X wins!!!!");
+      reset();
+    }
+    else if(
+    // let creat all possible way for O to win
+      ​
+    document.getElementById("btn1").value=="O"&&
+    document.getElementById("btn2").value=="O"&&
+    document.getElementById("btn3").value=="O"||
+    document.getElementById("btn4").value=="O"&&
+    document.getElementById("btn5").value=="O"&&
+    document.getElementById("btn6").value=="O"||
+    document.getElementById("btn7").value=="O"&&
+    document.getElementById("btn8").value=="O"&&
+    document.getElementById("btn9").value=="O"||
+    document.getElementById("btn1").value=="O"&&
+    document.getElementById("btn5").value=="O"&&
+    document.getElementById("btn9").value=="O"||
+    document.getElementById("btn3").value=="O"&&
+    document.getElementById("btn5").value=="O"&&
+    document.getElementById("btn7").value=="O"||
+    document.getElementById("btn1").value=="O"&&
+    document.getElementById("btn4").value=="O"&&
+    document.getElementById("btn7").value=="O"||
+    document.getElementById("btn2").value=="O"&&
+    document.getElementById("btn5").value=="O"&&
+    document.getElementById("btn8").value=="O"||
+    document.getElementById("btn3").value=="O"&&
+    document.getElementById("btn6").value=="O"&&
+    document.getElementById("btn9").value=="O"
+  ){
+      document.write(" O wins!!!!");
+      reset();
+    }
+  }
+  // let creat a reset button
+
+  function reset() {
+  ​
+        document.getElementById("btn1").value="";
+    document.getElementById("btn2").value="";
+    document.getElementById("btn3").value="";
+    document.getElementById("btn4").value="";
+    document.getElementById("btn5").value="";
+    document.getElementById("btn6").value="";
+    document.getElementById("btn7").value="";
+    document.getElementById("btn8").value="";
+    document.getElementById("btn9").value="";
+​
+        document.getElementById("btn1").disabled="";
+    document.getElementById("btn2").disabled="";
+    document.getElementById("btn3").disabled="";
+    document.getElementById("btn4").disabled="";
+    document.getElementById("btn5").disabled="";
+    document.getElementById("btn6").disabled="";
+    document.getElementById("btn7").disabled="";
+    document.getElementById("btn8").disabled="";
+    document.getElementById("btn9").disabled="";
+  }
+</script>
+</body>
+</html>

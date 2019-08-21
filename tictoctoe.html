@@ -1,78 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>tictoctoe</title>
+  <meta charset="UTF-8">
+  <title>Caro</title>
+  <style>
+    .cell {
+      width: 40px;
+      height: 40px;
+      border: solid 1px blue;
+      text-align: center;
+      font-size: 20pt;
+      cursor: pointer;
+      color: red;
+    }
+  </style>
 </head>
 <body>
-<p id="tictoctoe"></p>
-<button type="button" onclick="changeValueX()">x</button>
-<button type="button" onclick="changeValueY()">y</button>
-<script>
-    let b = document.getElementById("tictoctoe");
-    let board=[];
-    let data="";
-    for(let i=0;i<3;i++)
-    {
-        board[i]=new Array();
-        data+="<br/>";
-        for (let j=0;j<3;j++)
-        {
-            board[i][j]=".";
-            data+=board[i][j]+"&nbsp &nbsp &nbsp &nbsp";
-        }
-    }
-    b.innerHTML=data;
 
-    function changeValueX() {
-        let poisonx=prompt("x");
-        let poisony=prompt("y");
-        board[poisonx][poisony]="x";
-        data="";
-        for(i=0;i<3;i++)
-        {
-            data+="<br>";
-            for(j=0;j<3;j++)
-            {
+<div id="display"></div>
 
-                data+=board[i][j]+"&nbsp&nbsp"
-            }
-
-        }
-        b.innerHTML=data;
-
-    }
-    function changeValueY() {
-        let poisonX=prompt("x");
-        let poisonY=prompt("y");
-        board[poisonX][poisonY]="0";
-        data="";
-        for(i=0;i<3;i++){
-            data+="<br>";
-            for(j=0;j<3;j++)
-            {
-
-                data+=board[i][j]+"&nbsp&nbsp";
-            }
-        }
-
-        b.innerHTML=data;
-    }
-
-  function getxy(number1,number2) {
-        board[number1][number2]="x";
-        data="";
-        for(let i=0;i<3;i++)
-        {
-            data+="<br>";
-            for(let j=0;j<3;j++)
-            {
-                data+=board[i][j]+"&nbsp";
-            }
-        }
-        b.innerHTML=data;
-
-  }
-</script>
+<script src="caro.js"></script>
 </body>
 </html>
